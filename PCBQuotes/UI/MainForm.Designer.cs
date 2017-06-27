@@ -1,6 +1,6 @@
-﻿namespace PCBQuotes
+﻿namespace PCBQuotes.UI
 {
-    partial class RadForm1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,12 +31,12 @@
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // RadForm1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "RadForm1";
-            this.Text = "RadForm1";
+            this.Name = "MainForm";
+            this.Text = "MainForm";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
