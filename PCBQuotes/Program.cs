@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Telerik.WinControls;
 
 namespace PCBQuotes
 {
@@ -20,9 +21,17 @@ namespace PCBQuotes
             //全局异常处理
             GlobalExceptionHandler();
 
+            //terlerik 控件本地化
+            TelerikUILocalization();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new UI.MainForm());
+        }
+
+        private static void TelerikUILocalization()
+        {
+            RadMessageLocalizationProvider.CurrentProvider = new Localization.CNRadMessageLocalizationProvider();
         }
 
         /// <summary>
