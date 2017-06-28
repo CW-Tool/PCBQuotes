@@ -29,6 +29,12 @@ namespace PCBQuotes
             Application.Run(new UI.MainForm());
         }
 
+         
+
+
+        /// <summary>
+        /// Telerik ui 本地化
+        /// </summary>
         private static void TelerikUILocalization()
         {
             RadMessageLocalizationProvider.CurrentProvider = new Localization.CNRadMessageLocalizationProvider();

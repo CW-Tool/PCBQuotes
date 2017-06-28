@@ -39,6 +39,7 @@
             this.menuUsersManager = new Telerik.WinControls.UI.RadMenuItem();
             this.menuRoles = new Telerik.WinControls.UI.RadMenuItem();
             this.menuUsers = new Telerik.WinControls.UI.RadMenuItem();
+            this.menuDatabaseSetting = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -96,6 +97,8 @@
             // 
             // menuSettings
             // 
+            this.menuSettings.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.menuDatabaseSetting});
             this.menuSettings.Name = "menuSettings";
             this.menuSettings.Text = "设置";
             // 
@@ -116,6 +119,11 @@
             // 
             this.menuUsers.Name = "menuUsers";
             this.menuUsers.Text = "用户";
+            // 
+            // menuDatabaseSetting
+            // 
+            this.menuDatabaseSetting.Name = "menuDatabaseSetting";
+            this.menuDatabaseSetting.Text = "数据库设置";
             // 
             // MainForm
             // 
@@ -149,5 +157,6 @@
         private Telerik.WinControls.UI.RadMenuItem menuRoles;
         private Telerik.WinControls.UI.RadMenuItem menuUsers;
         private Telerik.WinControls.UI.RadMenuItem menuSettings;
+        private Telerik.WinControls.UI.RadMenuItem menuDatabaseSetting;
     }
 }
