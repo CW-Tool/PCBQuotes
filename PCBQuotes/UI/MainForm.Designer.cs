@@ -28,20 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
+            this.menuFile = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuSeparatorItem1 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
+            this.menuExit = new Telerik.WinControls.UI.RadMenuItem();
+            this.menuWindows = new Telerik.WinControls.UI.RadMenuItem();
+            this.menuAbout = new Telerik.WinControls.UI.RadMenuItem();
+            this.menuCloseAllWindow = new Telerik.WinControls.UI.RadMenuItem();
+            ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
+            // radMenu1
+            // 
+            this.radMenu1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.menuFile,
+            this.menuWindows,
+            this.menuAbout});
+            this.radMenu1.Location = new System.Drawing.Point(0, 0);
+            this.radMenu1.Name = "radMenu1";
+            this.radMenu1.Size = new System.Drawing.Size(792, 20);
+            this.radMenu1.TabIndex = 0;
+            this.radMenu1.Text = "radMenu1";
+            // 
+            // menuFile
+            // 
+            this.menuFile.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuSeparatorItem1,
+            this.menuExit});
+            this.menuFile.Name = "menuFile";
+            this.menuFile.Text = "文件";
+            // 
+            // radMenuSeparatorItem1
+            // 
+            this.radMenuSeparatorItem1.Name = "radMenuSeparatorItem1";
+            this.radMenuSeparatorItem1.Text = "radMenuSeparatorItem1";
+            this.radMenuSeparatorItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // menuExit
+            // 
+            this.menuExit.Name = "menuExit";
+            this.menuExit.Text = "退出";
+            // 
+            // menuWindows
+            // 
+            this.menuWindows.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.menuCloseAllWindow});
+            this.menuWindows.MdiList = true;
+            this.menuWindows.Name = "menuWindows";
+            this.menuWindows.Text = "窗口";
+            // 
+            // menuAbout
+            // 
+            this.menuAbout.Name = "menuAbout";
+            this.menuAbout.Text = "关于";
+            // 
+            // menuCloseAllWindow
+            // 
+            this.menuCloseAllWindow.Name = "menuCloseAllWindow";
+            this.menuCloseAllWindow.Text = "关闭所有窗口";
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(792, 570);
+            this.Controls.Add(this.radMenu1);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
+            this.Text = "主窗口";
+            ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private Telerik.WinControls.UI.RadMenu radMenu1;
+        private Telerik.WinControls.UI.RadMenuItem menuFile;
+        private Telerik.WinControls.UI.RadMenuSeparatorItem radMenuSeparatorItem1;
+        private Telerik.WinControls.UI.RadMenuItem menuExit;
+        private Telerik.WinControls.UI.RadMenuItem menuWindows;
+        private Telerik.WinControls.UI.RadMenuItem menuCloseAllWindow;
+        private Telerik.WinControls.UI.RadMenuItem menuAbout;
     }
 }
