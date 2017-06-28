@@ -14,6 +14,15 @@ namespace PCBQuotes.UI
         public MainForm()
         {
             InitializeComponent();
+            InitForm();
+        }
+
+        /// <summary>
+        /// 初始化窗口
+        /// </summary>
+        private void InitForm()
+        {
+            this.IsMdiContainer = true; //MDI主窗口
         }
     }
 }
