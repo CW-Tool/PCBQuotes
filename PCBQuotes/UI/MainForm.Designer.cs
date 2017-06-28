@@ -35,6 +35,10 @@
             this.menuWindows = new Telerik.WinControls.UI.RadMenuItem();
             this.menuAbout = new Telerik.WinControls.UI.RadMenuItem();
             this.menuCloseAllWindow = new Telerik.WinControls.UI.RadMenuItem();
+            this.menuSettings = new Telerik.WinControls.UI.RadMenuItem();
+            this.menuUsersManager = new Telerik.WinControls.UI.RadMenuItem();
+            this.menuRoles = new Telerik.WinControls.UI.RadMenuItem();
+            this.menuUsers = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -43,6 +47,8 @@
             // 
             this.radMenu1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.menuFile,
+            this.menuUsersManager,
+            this.menuSettings,
             this.menuWindows,
             this.menuAbout});
             this.radMenu1.Location = new System.Drawing.Point(0, 0);
@@ -88,6 +94,29 @@
             this.menuCloseAllWindow.Name = "menuCloseAllWindow";
             this.menuCloseAllWindow.Text = "关闭所有窗口";
             // 
+            // menuSettings
+            // 
+            this.menuSettings.Name = "menuSettings";
+            this.menuSettings.Text = "设置";
+            // 
+            // menuUsersManager
+            // 
+            this.menuUsersManager.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.menuRoles,
+            this.menuUsers});
+            this.menuUsersManager.Name = "menuUsersManager";
+            this.menuUsersManager.Text = "用户";
+            // 
+            // menuRoles
+            // 
+            this.menuRoles.Name = "menuRoles";
+            this.menuRoles.Text = "角色";
+            // 
+            // menuUsers
+            // 
+            this.menuUsers.Name = "menuUsers";
+            this.menuUsers.Text = "用户";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -116,5 +145,9 @@
         private Telerik.WinControls.UI.RadMenuItem menuWindows;
         private Telerik.WinControls.UI.RadMenuItem menuCloseAllWindow;
         private Telerik.WinControls.UI.RadMenuItem menuAbout;
+        private Telerik.WinControls.UI.RadMenuItem menuUsersManager;
+        private Telerik.WinControls.UI.RadMenuItem menuRoles;
+        private Telerik.WinControls.UI.RadMenuItem menuUsers;
+        private Telerik.WinControls.UI.RadMenuItem menuSettings;
     }
 }
