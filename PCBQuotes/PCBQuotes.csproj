@@ -56,6 +56,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Xml.Linq" />
@@ -80,6 +81,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\AppConfigHelper.cs" />
     <Compile Include="Helpers\MDIFormHelper.cs" />
     <Compile Include="Localization\CNRadMessageLocalizationProvider.cs" />
     <Compile Include="Program.cs" />
