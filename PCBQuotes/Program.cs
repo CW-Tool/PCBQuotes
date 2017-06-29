@@ -50,11 +50,13 @@ namespace PCBQuotes
             //处理UI线程上未处理异常
             Application.ThreadException += (s, e) => {
                 log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType).Error("UI线程异常", e.Exception);
+                RadMessageBox.Show(e.Exception.Message,"未处理异常",MessageBoxButtons.OK,RadMessageIcon.Error);
             };
             //处理非线程异常
             AppDomain.CurrentDomain.UnhandledException += (s, e) =>
             {
                 log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType).Error("未捕获异常", e.ExceptionObject as Exception);
+                RadMessageBox.Show((e.ExceptionObject as Exception).Message, "未处理异常", MessageBoxButtons.OK, RadMessageIcon.Error);
             };
         }
     }
