@@ -32,14 +32,14 @@
             this.menuFile = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuSeparatorItem1 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
             this.menuExit = new Telerik.WinControls.UI.RadMenuItem();
-            this.menuWindows = new Telerik.WinControls.UI.RadMenuItem();
-            this.menuAbout = new Telerik.WinControls.UI.RadMenuItem();
-            this.menuCloseAllWindow = new Telerik.WinControls.UI.RadMenuItem();
             this.menuSettings = new Telerik.WinControls.UI.RadMenuItem();
-            this.menuUsersManager = new Telerik.WinControls.UI.RadMenuItem();
-            this.menuRoles = new Telerik.WinControls.UI.RadMenuItem();
-            this.menuUsers = new Telerik.WinControls.UI.RadMenuItem();
             this.menuDatabaseSetting = new Telerik.WinControls.UI.RadMenuItem();
+            this.menuWindows = new Telerik.WinControls.UI.RadMenuItem();
+            this.menuCloseAllWindow = new Telerik.WinControls.UI.RadMenuItem();
+            this.menuAbout = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuSeparatorItem2 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
+            this.menuUserRoles = new Telerik.WinControls.UI.RadMenuItem();
+            this.menuUsers = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +48,6 @@
             // 
             this.radMenu1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.menuFile,
-            this.menuUsersManager,
             this.menuSettings,
             this.menuWindows,
             this.menuAbout});
@@ -77,6 +76,21 @@
             this.menuExit.Name = "menuExit";
             this.menuExit.Text = "退出";
             // 
+            // menuSettings
+            // 
+            this.menuSettings.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.menuUserRoles,
+            this.menuUsers,
+            this.radMenuSeparatorItem2,
+            this.menuDatabaseSetting});
+            this.menuSettings.Name = "menuSettings";
+            this.menuSettings.Text = "设置";
+            // 
+            // menuDatabaseSetting
+            // 
+            this.menuDatabaseSetting.Name = "menuDatabaseSetting";
+            this.menuDatabaseSetting.Text = "数据库设置";
+            // 
             // menuWindows
             // 
             this.menuWindows.Items.AddRange(new Telerik.WinControls.RadItem[] {
@@ -85,45 +99,31 @@
             this.menuWindows.Name = "menuWindows";
             this.menuWindows.Text = "窗口";
             // 
-            // menuAbout
-            // 
-            this.menuAbout.Name = "menuAbout";
-            this.menuAbout.Text = "关于";
-            // 
             // menuCloseAllWindow
             // 
             this.menuCloseAllWindow.Name = "menuCloseAllWindow";
             this.menuCloseAllWindow.Text = "关闭所有窗口";
             // 
-            // menuSettings
+            // menuAbout
             // 
-            this.menuSettings.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.menuDatabaseSetting});
-            this.menuSettings.Name = "menuSettings";
-            this.menuSettings.Text = "设置";
+            this.menuAbout.Name = "menuAbout";
+            this.menuAbout.Text = "关于";
             // 
-            // menuUsersManager
+            // radMenuSeparatorItem2
             // 
-            this.menuUsersManager.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.menuRoles,
-            this.menuUsers});
-            this.menuUsersManager.Name = "menuUsersManager";
-            this.menuUsersManager.Text = "用户";
+            this.radMenuSeparatorItem2.Name = "radMenuSeparatorItem2";
+            this.radMenuSeparatorItem2.Text = "radMenuSeparatorItem2";
+            this.radMenuSeparatorItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // menuRoles
+            // menuUserRoles
             // 
-            this.menuRoles.Name = "menuRoles";
-            this.menuRoles.Text = "角色";
+            this.menuUserRoles.Name = "menuUserRoles";
+            this.menuUserRoles.Text = "用户角色管理";
             // 
             // menuUsers
             // 
             this.menuUsers.Name = "menuUsers";
-            this.menuUsers.Text = "用户";
-            // 
-            // menuDatabaseSetting
-            // 
-            this.menuDatabaseSetting.Name = "menuDatabaseSetting";
-            this.menuDatabaseSetting.Text = "数据库设置";
+            this.menuUsers.Text = "用户管理";
             // 
             // MainForm
             // 
@@ -153,10 +153,10 @@
         private Telerik.WinControls.UI.RadMenuItem menuWindows;
         private Telerik.WinControls.UI.RadMenuItem menuCloseAllWindow;
         private Telerik.WinControls.UI.RadMenuItem menuAbout;
-        private Telerik.WinControls.UI.RadMenuItem menuUsersManager;
-        private Telerik.WinControls.UI.RadMenuItem menuRoles;
-        private Telerik.WinControls.UI.RadMenuItem menuUsers;
         private Telerik.WinControls.UI.RadMenuItem menuSettings;
         private Telerik.WinControls.UI.RadMenuItem menuDatabaseSetting;
+        private Telerik.WinControls.UI.RadMenuItem menuUserRoles;
+        private Telerik.WinControls.UI.RadMenuItem menuUsers;
+        private Telerik.WinControls.UI.RadMenuSeparatorItem radMenuSeparatorItem2;
     }
 }

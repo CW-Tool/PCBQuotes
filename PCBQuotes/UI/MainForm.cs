@@ -59,6 +59,11 @@ namespace PCBQuotes.UI
                 //Helpers.MDIFormHelper.OpenUniqueMDIChildWindow<UI.DatabaseSettingForm>(this);
                 SetDatabaseConnectionString();
             };
+
+            //用户角色 管理
+            this.menuUserRoles.Click += (s, e) => {
+                Helpers.MDIFormHelper.OpenUniqueMDIChildWindow<UI.UserRolesForm>(this);
+            };
         }
 
         private void SetDatabaseConnectionString()
