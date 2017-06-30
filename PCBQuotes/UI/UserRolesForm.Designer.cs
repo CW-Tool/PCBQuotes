@@ -30,11 +30,11 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.radDataEntry1 = new Telerik.WinControls.UI.RadDataEntry();
-            this.radVirtualGrid1 = new Telerik.WinControls.UI.RadVirtualGrid();
+            this.vgUserRoles = new Telerik.WinControls.UI.RadVirtualGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radDataEntry1)).BeginInit();
             this.radDataEntry1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radVirtualGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vgUserRoles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +44,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.13249F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.86751F));
             this.tableLayoutPanel1.Controls.Add(this.radDataEntry1, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.radVirtualGrid1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.vgUserRoles, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(34, 46);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -65,13 +65,13 @@
             this.radDataEntry1.TabIndex = 0;
             this.radDataEntry1.Text = "radDataEntry1";
             // 
-            // radVirtualGrid1
+            // vgUserRoles
             // 
-            this.radVirtualGrid1.Location = new System.Drawing.Point(3, 79);
-            this.radVirtualGrid1.Name = "radVirtualGrid1";
-            this.radVirtualGrid1.Size = new System.Drawing.Size(437, 150);
-            this.radVirtualGrid1.TabIndex = 1;
-            this.radVirtualGrid1.Text = "vgUserRoles";
+            this.vgUserRoles.Location = new System.Drawing.Point(3, 79);
+            this.vgUserRoles.Name = "vgUserRoles";
+            this.vgUserRoles.Size = new System.Drawing.Size(437, 150);
+            this.vgUserRoles.TabIndex = 1;
+            this.vgUserRoles.Text = "vgUserRoles";
             // 
             // UserRolesForm
             // 
@@ -88,7 +88,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radDataEntry1)).EndInit();
             this.radDataEntry1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radVirtualGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vgUserRoles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -98,6 +98,6 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Telerik.WinControls.UI.RadDataEntry radDataEntry1;
-        private Telerik.WinControls.UI.RadVirtualGrid radVirtualGrid1;
+        private Telerik.WinControls.UI.RadVirtualGrid vgUserRoles;
     }
 }
