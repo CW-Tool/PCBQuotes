@@ -26,7 +26,7 @@ namespace PCBQuotes.UI
             this.vgUserRoles.EnableAlternatingRowColor = true;
             this.vgUserRoles.Selection.Multiselect = false;
             this.vgUserRoles.SelectionMode = VirtualGridSelectionMode.FullRowSelect;
-            this.vgUserRoles.AllowAddNewRow = true;
+            this.vgUserRoles.AllowAddNewRow = false;
             this.vgUserRoles.AllowDelete = false;
             this.vgUserRoles.AllowEdit = false;
              

@@ -13,6 +13,13 @@ namespace PCBQuotes.Helpers
         private static readonly object obj = new object();//用于线程锁对象
         //private static SynchronizationContext syncContext = SynchronizationContext.Current;//线程中更新UI模型传播上下文
 
+
+        /// <summary>
+        /// 设置virtualgrid 数据 并设置  CellValueNeeded
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="d"></param>
+        /// <param name="syncContext"></param>
         public static void InitalLoad<T>(VirtualGridData<T> d, SynchronizationContext syncContext) where T:new()
         {
             var grid = d.Grid;

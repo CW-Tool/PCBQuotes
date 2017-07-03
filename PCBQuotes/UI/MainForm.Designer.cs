@@ -40,7 +40,9 @@
             this.radMenuSeparatorItem2 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
             this.menuUserRoles = new Telerik.WinControls.UI.RadMenuItem();
             this.menuUsers = new Telerik.WinControls.UI.RadMenuItem();
+            this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,11 +127,20 @@
             this.menuUsers.Name = "menuUsers";
             this.menuUsers.Text = "用户管理";
             // 
+            // radStatusStrip1
+            // 
+            this.radStatusStrip1.Location = new System.Drawing.Point(0, 544);
+            this.radStatusStrip1.Name = "radStatusStrip1";
+            this.radStatusStrip1.Size = new System.Drawing.Size(792, 26);
+            this.radStatusStrip1.TabIndex = 1;
+            this.radStatusStrip1.Text = "radStatusStrip1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 570);
+            this.Controls.Add(this.radStatusStrip1);
             this.Controls.Add(this.radMenu1);
             this.Name = "MainForm";
             // 
@@ -138,6 +149,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "主窗口";
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -158,5 +170,6 @@
         private Telerik.WinControls.UI.RadMenuItem menuUserRoles;
         private Telerik.WinControls.UI.RadMenuItem menuUsers;
         private Telerik.WinControls.UI.RadMenuSeparatorItem radMenuSeparatorItem2;
+        private Telerik.WinControls.UI.RadStatusStrip radStatusStrip1;
     }
 }
