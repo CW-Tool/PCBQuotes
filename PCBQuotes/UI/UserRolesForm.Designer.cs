@@ -33,16 +33,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnEdit = new Telerik.WinControls.UI.RadButton();
+            this.btnReLoad = new Telerik.WinControls.UI.RadButton();
             this.btnDelete = new Telerik.WinControls.UI.RadButton();
+            this.btnEdit = new Telerik.WinControls.UI.RadButton();
             this.btnAdd = new Telerik.WinControls.UI.RadButton();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vgUserRoles)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReLoad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +53,7 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.vgUserRoles, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
@@ -92,6 +95,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnReLoad);
             this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Controls.Add(this.btnAdd);
@@ -101,14 +105,14 @@
             this.panel2.Size = new System.Drawing.Size(686, 44);
             this.panel2.TabIndex = 3;
             // 
-            // btnEdit
+            // btnReLoad
             // 
-            this.btnEdit.Image = global::PCBQuotes.Properties.Resources.Edit_18px;
-            this.btnEdit.Location = new System.Drawing.Point(120, 17);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(110, 24);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "编辑";
+            this.btnReLoad.Image = global::PCBQuotes.Properties.Resources.Refresh_18px;
+            this.btnReLoad.Location = new System.Drawing.Point(353, 17);
+            this.btnReLoad.Name = "btnReLoad";
+            this.btnReLoad.Size = new System.Drawing.Size(110, 24);
+            this.btnReLoad.TabIndex = 3;
+            this.btnReLoad.Text = "重新加载";
             // 
             // btnDelete
             // 
@@ -118,6 +122,15 @@
             this.btnDelete.Size = new System.Drawing.Size(110, 24);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "删除";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = global::PCBQuotes.Properties.Resources.Edit_18px;
+            this.btnEdit.Location = new System.Drawing.Point(120, 17);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(110, 24);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "编辑";
             // 
             // btnAdd
             // 
@@ -146,8 +159,9 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReLoad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -164,5 +178,6 @@
         private Telerik.WinControls.UI.RadButton btnAdd;
         private Telerik.WinControls.UI.RadButton btnDelete;
         private Telerik.WinControls.UI.RadButton btnEdit;
+        private Telerik.WinControls.UI.RadButton btnReLoad;
     }
 }

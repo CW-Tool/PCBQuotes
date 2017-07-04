@@ -84,7 +84,10 @@
       <HintPath>..\lib\RCWF\2017.2.502.40\Telerik.WinControls.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.GridView, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2017.2.502.40\Telerik.WinControls.GridView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Telerik.WinControls.UI, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <HintPath>..\lib\RCWF\2017.2.502.40\Telerik.WinControls.UI.dll</HintPath>
       <Private>True</Private>
@@ -111,6 +114,12 @@
     <Compile Include="UI\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UserRolesAddEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UserRolesAddEditForm.Designer.cs">
+      <DependentUpon>UserRolesAddEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UserRolesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +139,9 @@
     </Compile>
     <EmbeddedResource Include="UI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserRolesAddEditForm.resx">
+      <DependentUpon>UserRolesAddEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UserRolesForm.resx">
       <DependentUpon>UserRolesForm.cs</DependentUpon>
@@ -157,6 +169,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Edit_18px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh_18px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

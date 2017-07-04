@@ -40,6 +40,9 @@ namespace PCBQuotes.UI
                 Application.Exit();//请注意在每一个子窗口中处理线程关闭in FormClosing
             };
 
+            //this.menuFile.Shortcuts.Add(new RadShortcut(Keys.Alt,Keys.F));
+            //this.menuFile.HintText = "(F)";
+             
             //关闭所有窗口菜单事件
             this.menuCloseAllWindow.Click += (s, e) => {
                 foreach (var m in this.MdiChildren)
