@@ -11,7 +11,7 @@ namespace PCBQuotes.Models
     public partial class UserRole
     {
         [Key]
-        [Display(AutoGenerateField = false)]
+        [Display(AutoGenerateField = true,Name ="")]
         public int  ID { get; set; }
 
         [Display(Name = "角色名称")]

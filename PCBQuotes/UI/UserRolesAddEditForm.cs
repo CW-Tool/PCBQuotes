@@ -14,6 +14,8 @@ namespace PCBQuotes.UI
         public UserRolesAddEditForm()
         {
             InitializeComponent();
+
+            this.Text = "新增/编辑";
         }
     }
 }

@@ -25,7 +25,42 @@ namespace PCBQuotes.Helpers
             var grid = d.Grid;
             grid.RowCount = 0;
             grid.ColumnCount = ModelHelper.GetColumnDisplayNames(typeof(T)).Count();
+
+            //设置Column宽度
+            grid.TableElement.ColumnsViewState.SetItemSize(0,30);
+
+            grid.ColumnWidthChanging += (s, e) => {
+                //ID列为命令按钮，固定大小，不允许resize
+                int idIndex = Array.IndexOf(ModelHelper.GetColumnNames(typeof(T)), "ID");
+                if (e.ColumnIndex==idIndex)
+                {
+                    e.Cancel = true;
+                }
+            };
+
+            grid.CreateCellElement += (s, e) => {
+                //ID列约定为命令按钮
+                int idIndex = Array.IndexOf(ModelHelper.GetColumnNames(typeof(T)), "ID");
+                if (e.RowIndex>=0 && e.ColumnIndex == idIndex)
+                {
+                    e.CellElement = new Helpers.VirtualGridEditCommandCellElement(); 
+                }
+                
+            };
+            grid.CellFormatting += (s, e) => {
+                //ID列约定为命令按钮
+                int idIndex = Array.IndexOf(ModelHelper.GetColumnNames(typeof(T)), "ID");
+                if (e.CellElement.RowIndex == -3 && e.CellElement.ColumnIndex == idIndex)
+                {
+                    e.CellElement.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
+                }
+                if (e.CellElement.RowIndex == -1 && e.CellElement.ColumnIndex == idIndex)
+                {
+                    e.CellElement.Visibility= Telerik.WinControls.ElementVisibility.Hidden;
+                }
+            };
             
+
             grid.CellValueNeeded += (s, e) => {
                 if (e.ColumnIndex < 0 || d.Data == null) //|| data == null
                     return;
