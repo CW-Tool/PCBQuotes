@@ -11,7 +11,7 @@ namespace PCBQuotes.Helpers
     public class VirtualGridDataHelper
     {
         private static readonly object obj = new object();//用于线程锁对象
-        //private static SynchronizationContext syncContext = SynchronizationContext.Current;//线程中更新UI模型传播上下文
+        private static SynchronizationContext syncContext = SynchronizationContext.Current;//线程中更新UI模型传播上下文
 
 
         /// <summary>
@@ -20,45 +20,45 @@ namespace PCBQuotes.Helpers
         /// <typeparam name="T"></typeparam>
         /// <param name="d"></param>
         /// <param name="syncContext"></param>
-        public static void InitalLoad<T>(VirtualGridData<T> d, SynchronizationContext syncContext) where T:new()
+        public static void InitalLoad<T>(VirtualGridData<T> d ) where T:new()
         {
             var grid = d.Grid;
             grid.RowCount = 0;
             grid.ColumnCount = ModelHelper.GetColumnDisplayNames(typeof(T)).Count();
 
-            //设置Column宽度
-            grid.TableElement.ColumnsViewState.SetItemSize(0,30);
+            ////设置Column宽度
+            //grid.TableElement.ColumnsViewState.SetItemSize(0,30);
 
-            grid.ColumnWidthChanging += (s, e) => {
-                //ID列为命令按钮，固定大小，不允许resize
-                int idIndex = Array.IndexOf(ModelHelper.GetColumnNames(typeof(T)), "ID");
-                if (e.ColumnIndex==idIndex)
-                {
-                    e.Cancel = true;
-                }
-            };
+            //grid.ColumnWidthChanging += (s, e) => {
+            //    //ID列为命令按钮，固定大小，不允许resize
+            //    int idIndex = Array.IndexOf(ModelHelper.GetColumnNames(typeof(T)), "ID");
+            //    if (e.ColumnIndex==idIndex)
+            //    {
+            //        e.Cancel = true;
+            //    }
+            //};
 
-            grid.CreateCellElement += (s, e) => {
-                //ID列约定为命令按钮
-                int idIndex = Array.IndexOf(ModelHelper.GetColumnNames(typeof(T)), "ID");
-                if (e.RowIndex>=0 && e.ColumnIndex == idIndex)
-                {
-                    e.CellElement = new Helpers.VirtualGridEditCommandCellElement(); 
-                }
+            //grid.CreateCellElement += (s, e) => {
+            //    //ID列约定为命令按钮
+            //    int idIndex = Array.IndexOf(ModelHelper.GetColumnNames(typeof(T)), "ID");
+            //    if (e.RowIndex>=0 && e.ColumnIndex == idIndex)
+            //    {
+            //        e.CellElement = new Helpers.VirtualGridEditCommandCellElement(); 
+            //    }
                 
-            };
-            grid.CellFormatting += (s, e) => {
-                //ID列约定为命令按钮
-                int idIndex = Array.IndexOf(ModelHelper.GetColumnNames(typeof(T)), "ID");
-                if (e.CellElement.RowIndex == -3 && e.CellElement.ColumnIndex == idIndex)
-                {
-                    e.CellElement.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
-                }
-                if (e.CellElement.RowIndex == -1 && e.CellElement.ColumnIndex == idIndex)
-                {
-                    e.CellElement.Visibility= Telerik.WinControls.ElementVisibility.Hidden;
-                }
-            };
+            //};
+            //grid.CellFormatting += (s, e) => {
+            //    //ID列约定为命令按钮
+            //    int idIndex = Array.IndexOf(ModelHelper.GetColumnNames(typeof(T)), "ID");
+            //    if (e.CellElement.RowIndex == -3 && e.CellElement.ColumnIndex == idIndex)
+            //    {
+            //        e.CellElement.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
+            //    }
+            //    if (e.CellElement.RowIndex == -1 && e.CellElement.ColumnIndex == idIndex)
+            //    {
+            //        e.CellElement.Visibility= Telerik.WinControls.ElementVisibility.Hidden;
+            //    }
+            //};
             
 
             grid.CellValueNeeded += (s, e) => {
@@ -79,7 +79,7 @@ namespace PCBQuotes.Helpers
                 {
                     e.Value = null;
                     e.ViewInfo.StartRowWaiting(e.RowIndex);
-                    LazyLoad<T>(d,syncContext);
+                    LazyLoad<T>(d);
                     //if (!this.lazyLoader.IsBusy)
                     //{
                     //    this.lazyLoader.RunWorkerAsync();
@@ -107,11 +107,15 @@ namespace PCBQuotes.Helpers
                             d.Data.Add(new T());
                         }
                         var initData = bll.Select<T>(grid.SortDescriptors.Expression, grid.FilterDescriptors.Expression, 1, d.PerLoadSize);
-                        d.LoadedCount = initData.Count();
-                        for (int i = 0; i < initData.Count; i++)
+                        d.LoadedCount = initData==null? 0: initData.Count();
+                        if (initData!=null)
                         {
-                            d.Data[i] = initData[i];
+                            for (int i = 0; i < initData.Count; i++)
+                            {
+                                d.Data[i] = initData[i];
+                            }
                         }
+                        
                     }
                     
                     
@@ -132,7 +136,7 @@ namespace PCBQuotes.Helpers
             });
         }
 
-        public static void LazyLoad<T>(VirtualGridData<T> d, SynchronizationContext syncContext) where T : new()
+        public static void LazyLoad<T>(VirtualGridData<T> d ) where T : new()
         {
             Task.Factory.StartNew(()=> {
                 using (BLL.GeneralBll bll = new BLL.GeneralBll())

@@ -100,15 +100,33 @@
   <ItemGroup>
     <Compile Include="BLL\GeneralBll.cs" />
     <Compile Include="DAL\GeneralDal.cs" />
+    <Compile Include="Enums\EditFormMode.cs" />
     <Compile Include="Helpers\AppConfigHelper.cs" />
+    <Compile Include="Helpers\ControlSearchHelper.cs" />
     <Compile Include="Helpers\MDIFormHelper.cs" />
     <Compile Include="Helpers\ModelHelper.cs" />
+    <Compile Include="Helpers\ValidationHelper.cs" />
     <Compile Include="Helpers\VirtualGridEditCommandCellElement.cs" />
     <Compile Include="Helpers\VirtualGridDataHelper.cs" />
     <Compile Include="Localization\CNRadMessageLocalizationProvider.cs" />
-    <Compile Include="Models\UserRole.cs" />
+    <Compile Include="Localization\CNRadVirtualGridLocalizationProvider.cs" />
+    <Compile Include="Models\AppUser.cs" />
+    <Compile Include="Models\NotifyPropertyChangedBase.cs" />
+    <Compile Include="Models\AppRole.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\AppUserAddEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AppUserAddEditForm.Designer.cs">
+      <DependentUpon>AppUserAddEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AppUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AppUserForm.Designer.cs">
+      <DependentUpon>AppUserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +156,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\AppUserAddEditForm.resx">
+      <DependentUpon>AppUserAddEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AppUserForm.resx">
+      <DependentUpon>AppUserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +197,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Refresh_18px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ok_18px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_18px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

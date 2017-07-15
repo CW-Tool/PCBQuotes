@@ -1,6 +1,6 @@
 ﻿namespace PCBQuotes.UI
 {
-    partial class UserRolesAddEditForm
+    partial class AppUserAddEditForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,40 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.deUserRole = new Telerik.WinControls.UI.RadDataEntry();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCanel = new Telerik.WinControls.UI.RadButton();
-            this.btnSubmit = new Telerik.WinControls.UI.RadButton();
-            ((System.ComponentModel.ISupportInitialize)(this.deUserRole)).BeginInit();
-            this.deUserRole.SuspendLayout();
+            this.btnOk = new Telerik.WinControls.UI.RadButton();
+            this.btnCancel = new Telerik.WinControls.UI.RadButton();
+            this.deMain = new Telerik.WinControls.UI.RadDataEntry();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCanel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSubmit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnOk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deMain)).BeginInit();
+            this.deMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
-            // 
-            // deUserRole
-            // 
-            this.deUserRole.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.deUserRole.Location = new System.Drawing.Point(3, 3);
-            this.deUserRole.Name = "deUserRole";
-            // 
-            // deUserRole.PanelContainer
-            // 
-            this.deUserRole.PanelContainer.Size = new System.Drawing.Size(484, 222);
-            this.deUserRole.Size = new System.Drawing.Size(486, 224);
-            this.deUserRole.TabIndex = 0;
-            this.deUserRole.Text = "radDataEntry1";
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.deUserRole, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.deMain, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -69,54 +56,67 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(492, 270);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnCanel);
-            this.panel1.Controls.Add(this.btnSubmit);
+            this.panel1.Controls.Add(this.btnCancel);
+            this.panel1.Controls.Add(this.btnOk);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 233);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(486, 34);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 0;
             // 
-            // btnCanel
+            // btnOk
             // 
-            this.btnCanel.Image = global::PCBQuotes.Properties.Resources.Cancel_18px;
-            this.btnCanel.Location = new System.Drawing.Point(373, 7);
-            this.btnCanel.Name = "btnCanel";
-            this.btnCanel.Size = new System.Drawing.Size(110, 24);
-            this.btnCanel.TabIndex = 1;
-            this.btnCanel.Text = "取消";
+            this.btnOk.Image = global::PCBQuotes.Properties.Resources.Ok_18px;
+            this.btnOk.Location = new System.Drawing.Point(257, 3);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(110, 24);
+            this.btnOk.TabIndex = 0;
+            this.btnOk.Text = "确定";
             // 
-            // btnSubmit
+            // btnCancel
             // 
-            this.btnSubmit.Image = global::PCBQuotes.Properties.Resources.Ok_18px;
-            this.btnSubmit.Location = new System.Drawing.Point(257, 7);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(110, 24);
-            this.btnSubmit.TabIndex = 0;
-            this.btnSubmit.Text = "确定";
+            this.btnCancel.Image = global::PCBQuotes.Properties.Resources.Cancel_18px;
+            this.btnCancel.Location = new System.Drawing.Point(373, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(110, 24);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "取消";
             // 
-            // UserRolesAddEditForm
+            // deMain
+            // 
+            this.deMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.deMain.Location = new System.Drawing.Point(3, 3);
+            this.deMain.Name = "deMain";
+            // 
+            // deMain.PanelContainer
+            // 
+            this.deMain.PanelContainer.Size = new System.Drawing.Size(484, 222);
+            this.deMain.Size = new System.Drawing.Size(486, 224);
+            this.deMain.TabIndex = 1;
+            this.deMain.Text = "radDataEntry1";
+            // 
+            // AppUserAddEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 270);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "UserRolesAddEditForm";
+            this.Name = "AppUserAddEditForm";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "UserRolesAddEditForm";
-            ((System.ComponentModel.ISupportInitialize)(this.deUserRole)).EndInit();
-            this.deUserRole.ResumeLayout(false);
+            this.Text = "AppUserAddEditForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnCanel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSubmit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnOk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deMain)).EndInit();
+            this.deMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -124,10 +124,10 @@
 
         #endregion
 
-        private Telerik.WinControls.UI.RadDataEntry deUserRole;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
-        private Telerik.WinControls.UI.RadButton btnCanel;
-        private Telerik.WinControls.UI.RadButton btnSubmit;
+        private Telerik.WinControls.UI.RadButton btnCancel;
+        private Telerik.WinControls.UI.RadButton btnOk;
+        private Telerik.WinControls.UI.RadDataEntry deMain;
     }
 }

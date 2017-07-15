@@ -65,7 +65,11 @@ namespace PCBQuotes.UI
 
             //用户角色 管理
             this.menuUserRoles.Click += (s, e) => {
-                Helpers.MDIFormHelper.OpenUniqueMDIChildWindow<UI.UserRolesForm>(this);
+                Helpers.MDIFormHelper.OpenUniqueMDIChildWindow<UI.UserRolesForm>(this,FormWindowState.Normal);
+            };
+            //用户管理菜单事件
+            this.menuUsers.Click += (s, e) => {
+                Helpers.MDIFormHelper.OpenUniqueMDIChildWindow<UI.AppUserForm>(this, FormWindowState.Normal);
             };
         }
 

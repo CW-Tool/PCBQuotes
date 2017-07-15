@@ -149,39 +149,25 @@ namespace PCBQuotes.BLL
             return null;
         }
 
-        public string Update<T>(T t)
+        public T Update<T>(T t)
         {
-            try
-            {
-                var cols = ModelHelper.GetColumnNames(typeof(T), true, false);//t.GetType()
-                var tbName = ModelHelper.GetTableNameByModel<T>();
-                var fields = string.Join(",", cols);
+            var cols = ModelHelper.GetColumnNames(typeof(T), true, false);//t.GetType()
+            var tbName = ModelHelper.GetTableNameByModel<T>();
+            var fields = string.Join(",", cols);
 
-                string[] psArr = new string[cols.Length];
-                var p = new DynamicParameters();
-                for (int i = 0; i < cols.Length; i++)
-                {
-                    var tmp = "@" + cols[i];
-                    psArr[i] = cols[i] + "=" + tmp;
-                    p.Add(tmp, ModelHelper.GetValueByPropertyName<T>(t, cols[i]));
-                }
-                var paras = string.Join(",", psArr);
-                string sql = string.Format(@"UPDATE   {0}  SET {1} WHERE ID=@ID", tbName, paras);
-                p.Add("@ID", ModelHelper.GetValueByPropertyName<T>(t, "ID"));
-                var re = conn.Execute(sql, p);
-                if (re > 0)
-                {
-                    return "success";
-                }
-                else
-                {
-                    return "失败";
-                }
-            }
-            catch (Exception ex)
+            string[] psArr = new string[cols.Length];
+            var p = new DynamicParameters();
+            for (int i = 0; i < cols.Length; i++)
             {
-                return ex.Message;
+                var tmp = "@" + cols[i];
+                psArr[i] = cols[i] + "=" + tmp;
+                p.Add(tmp, ModelHelper.GetValueByPropertyName<T>(t, cols[i]));
             }
+            var paras = string.Join(",", psArr);
+            string sql = string.Format(@"UPDATE   {0}  SET {1}  output inserted.*  WHERE Id=@Id", tbName, paras);
+            p.Add("@Id", ModelHelper.GetValueByPropertyName<T>(t, "Id"));
+            var re = conn.QueryFirstOrDefault<T>(sql, p);
+            return re; 
         }
 
         public int Update<T>(int id, string fieldName, object value)
@@ -193,7 +179,7 @@ namespace PCBQuotes.BLL
             return conn.Execute(sql, p);
         }
 
-        public int Insert<T>(T t)
+        public T Insert<T>(T t)
         {
             var cols = ModelHelper.GetColumnNames(typeof(T), true, false);//t.GetType()
             var tbName = ModelHelper.GetTableNameByModel<T>();
@@ -208,8 +194,8 @@ namespace PCBQuotes.BLL
                 p.Add(tmp, ModelHelper.GetValueByPropertyName<T>(t, cols[i]));
             }
             var paras = string.Join(",", psArr);
-            string sql = string.Format(@"INSERT INTO {0} ({1}) VALUES ({2})", tbName, fields, paras);
-            return conn.Execute(sql, p);
+            string sql = string.Format(@"INSERT INTO {0} ({1}) output inserted.*  VALUES ({2})", tbName, fields, paras);
+            return conn.QueryFirstOrDefault<T>(sql, p);
             //try
             //{
             //    return conn.Execute(sql, p);
@@ -246,8 +232,8 @@ namespace PCBQuotes.BLL
         public int Delete<T>(int id)
         {
             var tbName = ModelHelper.GetTableNameByModel<T>();
-            string sql = string.Format(@"DELETE FROM {0} WHERE  ID = @ID", tbName);
-            return conn.Execute(sql, new { ID = id });
+            string sql = string.Format(@"DELETE FROM {0}  WHERE  Id = @Id", tbName);
+            return conn.Execute(sql, new { Id = id });
         }
 
         public int Delete<T>(List<int> ids)

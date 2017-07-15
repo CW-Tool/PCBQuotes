@@ -33,13 +33,13 @@
             this.radMenuSeparatorItem1 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
             this.menuExit = new Telerik.WinControls.UI.RadMenuItem();
             this.menuSettings = new Telerik.WinControls.UI.RadMenuItem();
+            this.menuUserRoles = new Telerik.WinControls.UI.RadMenuItem();
+            this.menuUsers = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuSeparatorItem2 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
             this.menuDatabaseSetting = new Telerik.WinControls.UI.RadMenuItem();
             this.menuWindows = new Telerik.WinControls.UI.RadMenuItem();
             this.menuCloseAllWindow = new Telerik.WinControls.UI.RadMenuItem();
             this.menuAbout = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuSeparatorItem2 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
-            this.menuUserRoles = new Telerik.WinControls.UI.RadMenuItem();
-            this.menuUsers = new Telerik.WinControls.UI.RadMenuItem();
             this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
@@ -81,12 +81,28 @@
             // menuSettings
             // 
             this.menuSettings.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.menuUserRoles,
             this.menuUsers,
+            this.menuUserRoles,
             this.radMenuSeparatorItem2,
             this.menuDatabaseSetting});
             this.menuSettings.Name = "menuSettings";
             this.menuSettings.Text = "设置";
+            // 
+            // menuUserRoles
+            // 
+            this.menuUserRoles.Name = "menuUserRoles";
+            this.menuUserRoles.Text = "用户角色管理";
+            // 
+            // menuUsers
+            // 
+            this.menuUsers.Name = "menuUsers";
+            this.menuUsers.Text = "用户管理";
+            // 
+            // radMenuSeparatorItem2
+            // 
+            this.radMenuSeparatorItem2.Name = "radMenuSeparatorItem2";
+            this.radMenuSeparatorItem2.Text = "radMenuSeparatorItem2";
+            this.radMenuSeparatorItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // menuDatabaseSetting
             // 
@@ -110,22 +126,6 @@
             // 
             this.menuAbout.Name = "menuAbout";
             this.menuAbout.Text = "关于";
-            // 
-            // radMenuSeparatorItem2
-            // 
-            this.radMenuSeparatorItem2.Name = "radMenuSeparatorItem2";
-            this.radMenuSeparatorItem2.Text = "radMenuSeparatorItem2";
-            this.radMenuSeparatorItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // menuUserRoles
-            // 
-            this.menuUserRoles.Name = "menuUserRoles";
-            this.menuUserRoles.Text = "用户角色管理";
-            // 
-            // menuUsers
-            // 
-            this.menuUsers.Name = "menuUsers";
-            this.menuUsers.Text = "用户管理";
             // 
             // radStatusStrip1
             // 

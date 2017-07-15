@@ -149,13 +149,15 @@ namespace PCBQuotes.Helpers
             List<string> re = new List<string>();
             foreach (PropertyDescriptor prop in properties)
             {
-                var disAtt = (DisplayAttribute)t.GetProperty(prop.Name).GetCustomAttributes(typeof(DisplayAttribute), true).SingleOrDefault();
-                if (disAtt != null && false == disAtt.GetAutoGenerateField())
+                
+                //BrowsableAttribute
+                var bsaAtt = (BrowsableAttribute)t.GetProperty(prop.Name).GetCustomAttributes(typeof(BrowsableAttribute), true).SingleOrDefault();
+                if (  bsaAtt!=null  && false== bsaAtt.Browsable)
                 {
                     continue;
                 }
-
-                var disCN = disAtt != null ? disAtt.Name : prop.Name;
+                var disAtt = (DisplayNameAttribute)t.GetProperty(prop.Name).GetCustomAttributes(typeof(DisplayNameAttribute), true).SingleOrDefault();
+                var disCN = disAtt != null ? disAtt.DisplayName : prop.Name;
                 re.Add(disCN);
 
             }
@@ -174,8 +176,9 @@ namespace PCBQuotes.Helpers
             List<string> re = new List<string>();
             foreach (PropertyDescriptor prop in properties)
             {
-                var disAtt = (DisplayAttribute)t.GetProperty(prop.Name).GetCustomAttributes(typeof(DisplayAttribute), true).SingleOrDefault();
-                if (disAtt != null && false == disAtt.GetAutoGenerateField())
+                //var disAtt = (DisplayNameAttribute)t.GetProperty(prop.Name).GetCustomAttributes(typeof(DisplayNameAttribute), true).SingleOrDefault();
+                var bsaAtt = (BrowsableAttribute)t.GetProperty(prop.Name).GetCustomAttributes(typeof(BrowsableAttribute), true).SingleOrDefault();
+                if (  bsaAtt != null && false == bsaAtt.Browsable)
                 {
                     continue;
                 }

@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.UI.Localization;
 
 namespace PCBQuotes
 {
@@ -38,6 +39,7 @@ namespace PCBQuotes
         private static void TelerikUILocalization()
         {
             RadMessageLocalizationProvider.CurrentProvider = new Localization.CNRadMessageLocalizationProvider();
+            RadVirtualGridLocalizationProvider.CurrentProvider = new Localization.CNRadVirtualGridLocalizationProvider();
         }
 
         /// <summary>

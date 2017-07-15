@@ -63,6 +63,16 @@ namespace PCBQuotes.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Cancel_18px {
+            get {
+                object obj = ResourceManager.GetObject("Cancel_18px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap Delete_18px {
             get {
                 object obj = ResourceManager.GetObject("Delete_18px", resourceCulture);
@@ -76,6 +86,16 @@ namespace PCBQuotes.Properties {
         internal static System.Drawing.Bitmap Edit_18px {
             get {
                 object obj = ResourceManager.GetObject("Edit_18px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Ok_18px {
+            get {
+                object obj = ResourceManager.GetObject("Ok_18px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

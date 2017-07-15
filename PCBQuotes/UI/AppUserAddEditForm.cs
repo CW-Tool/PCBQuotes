@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PCBQuotes.Helpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,62 +10,62 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
-using PCBQuotes.Helpers;
 
 namespace PCBQuotes.UI
 {
-    public partial class UserRolesAddEditForm : Telerik.WinControls.UI.RadForm
+    public partial class AppUserAddEditForm : Telerik.WinControls.UI.RadForm
     {
-        private   readonly object obj = new object();//用于线程锁对象
-        private   SynchronizationContext syncContext = SynchronizationContext.Current;//线程中更新UI模型传播上下文
+        private readonly object obj = new object();//用于线程锁对象
+        private SynchronizationContext syncContext = SynchronizationContext.Current;//线程中更新UI模型传播上下文
         private BLL.GeneralBll bll = new BLL.GeneralBll();
-        public Models.AppRole UserRole { get; set; }
+        public Models.AppUser DataEntry { get; set; }
         public Enums.EditFormMode EditMode { get; set; }
 
-        
-        public UserRolesAddEditForm()
+        public AppUserAddEditForm()
         {
             InitializeComponent();
-            this.AcceptButton = this.btnSubmit;
-            this.CancelButton = this.btnCanel;
-
+            this.AcceptButton = this.btnOk;
+            this.CancelButton = this.btnCancel;
             this.FormClosed += (s, e) => {
                 //释放 资源 
-                if (bll!=null)
+                if (bll != null)
                 {
                     bll.Dispose();
                     bll = null;
                 }
             };
-
             //设置dataentity
-            this.deUserRole.FitToParentWidth = true;
-            this.deUserRole.ShowValidationPanel = true;
-            this.deUserRole.EditorInitializing += (s, e) => {
+            this.deMain.FitToParentWidth = true;
+            this.deMain.ShowValidationPanel = true;
+            this.deMain.EditorInitializing += (s, e) => {
                 e.Editor.Name = e.Property.Name;
+                if (e.Property.Name=="UserName")
+                {
+                    e.Editor.Enabled = false;
+                }
             };
-            this.deUserRole.ItemValidating += (s, e) => {
-                Models.AppRole role = this.deUserRole.CurrentObject as Models.AppRole;
+            this.deMain.ItemValidating += (s, e) => {
+                Models.AppUser user = this.deMain.CurrentObject as Models.AppUser;
                 switch (e.Label.Text)
                 {
-                    case "角色名称":
-                        if (string.IsNullOrWhiteSpace(role.RoleName))
+                    case "用户名":
+                        if (string.IsNullOrWhiteSpace(user.UserName))
                         {
-                            string errorMessage = "角色名称不能为空！";
+                            string errorMessage = "用户名不能为空！";
                             e.ErrorProvider.SetError(s as Control, errorMessage);
                             e.Cancel = true;
-                            AddErrorLabel(this.deUserRole, e.Label.Text, errorMessage);
+                            AddErrorLabel(this.deMain, e.Label.Text, errorMessage);
                         }
                         else
                         {
                             e.ErrorProvider.Clear();
-                            this.deUserRole.ValidationPanel.PanelContainer.Controls.RemoveByKey(e.Label.Text);
+                            this.deMain.ValidationPanel.PanelContainer.Controls.RemoveByKey(e.Label.Text);
                         }
                         break;
                     default:
                         break;
                 }
-            }; 
+            };
 
             this.Shown += (s, e) => {
                 //设置窗体title
@@ -72,7 +73,7 @@ namespace PCBQuotes.UI
                 {
                     case Enums.EditFormMode.Add:
                         this.Text = "新增";
-                        UserRole = new Models.AppRole()  ;
+                        DataEntry = new Models.AppUser();
                         break;
                     case Enums.EditFormMode.Edit:
                         this.Text = "编辑";
@@ -84,43 +85,43 @@ namespace PCBQuotes.UI
                         this.Text = "新增/编辑";
                         break;
                 }
-                if (UserRole!=null)
+                if (DataEntry != null)
                 {
-                    this.deUserRole.DataSource = this.UserRole;
-                    this.UserRole.BeginEdit();
+                    this.deMain.DataSource = this.DataEntry;
+                    
                 }
             };
 
-            this.btnCanel.Click += (s, e) => {
+            this.btnCancel.Click += (s, e) => {
                 //this.UserRole.CancelEdit();
                 this.DialogResult = DialogResult.Cancel;
             };
-            
-            this.btnSubmit.Click += (s, e) => {
-                var t= ValidationHelper.hasValidationErrors(this.deUserRole.Controls);
+
+            this.btnOk.Click += (s, e) => {
+                var t = ValidationHelper.hasValidationErrors(this.deMain.Controls);
                 if (t)
                 {
                     return;
                 }
-                
-                this.btnSubmit.Enabled = false;
+
+                this.btnOk.Enabled = false;
                 Task.Factory.StartNew(() => {
-                    Models.AppRole re =null;
+                    Models.AppUser re = null;
                     if (EditMode == Enums.EditFormMode.Add)
                     {
-                        re = bll.Insert<Models.AppRole>(this.UserRole);
+                        re = bll.Insert<Models.AppUser>(this.DataEntry);
                     }
                     else if (EditMode == Enums.EditFormMode.Edit)
                     {
-                        re = bll.Update<Models.AppRole>(this.UserRole);
-                    } 
-                    
-                    syncContext.Post((state)=> {
-                        this.btnSubmit.Enabled = true;
-                        Models.AppRole sta = (Models.AppRole)state;
-                        if (sta!=null)
+                        re = bll.Update<Models.AppUser>(this.DataEntry);
+                    }
+
+                    syncContext.Post((state) => {
+                        this.btnOk.Enabled = true;
+                        Models.AppUser sta = (Models.AppUser)state;
+                        if (sta != null)
                         {
-                            this.UserRole = sta;
+                            this.DataEntry = sta;
                             this.DialogResult = DialogResult.OK;
                             //this.SubmitSucess = true;
                         }
@@ -128,12 +129,11 @@ namespace PCBQuotes.UI
                         {
                             RadMessageBox.Show(this, "保存失败!", "", MessageBoxButtons.OK, RadMessageIcon.Error);
                         }
-                    },re );
+                    }, re);
                 });
             };
         }
-
-        private void AddErrorLabel(RadDataEntry dataEntry,string propertyName, string errorMessage)
+        private void AddErrorLabel(RadDataEntry dataEntry, string propertyName, string errorMessage)
         {
             if (!dataEntry.ValidationPanel.PanelContainer.Controls.ContainsKey(propertyName))
             {

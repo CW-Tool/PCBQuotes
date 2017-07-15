@@ -14,7 +14,7 @@ namespace PCBQuotes.Helpers
         /// <typeparam name="T">子窗口</typeparam>
         /// <param name="mdiParent">MDI父窗口</param>
         /// <returns></returns>
-        public static T OpenUniqueMDIChildWindow<T>(Form mdiParent) where T : Form, new()
+        public static T OpenUniqueMDIChildWindow<T>(Form mdiParent,FormWindowState windowState) where T : Form, new()
         {
             //查找 是否有此子窗口，有则显示 
             foreach (var m in mdiParent.MdiChildren)
@@ -22,9 +22,9 @@ namespace PCBQuotes.Helpers
                 if (m.GetType().Equals(typeof(T)))
                 {
                     m.Activate();
-                    if (m.WindowState == FormWindowState.Minimized)
+                    if (m.WindowState != windowState)
                     {
-                        m.WindowState = FormWindowState.Maximized;
+                        m.WindowState = windowState;
                     }
                     return m as T;
                 }
@@ -32,7 +32,7 @@ namespace PCBQuotes.Helpers
             //没有 则 创建 
             T form = new T();
             form.MdiParent = mdiParent;
-            form.WindowState = FormWindowState.Maximized;
+            form.WindowState = windowState;
             form.Show();
             return form;
         }
