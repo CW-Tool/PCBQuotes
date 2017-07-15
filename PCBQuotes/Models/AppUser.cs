@@ -19,6 +19,8 @@ namespace PCBQuotes.Models
         private string tel;
         private string mobile;
         private string fax;
+        private bool isDisabled;
+        private bool isDeleted;
 
         [Browsable(false)]
         [Key]
@@ -52,6 +54,7 @@ namespace PCBQuotes.Models
             }
         }
 
+        [Browsable(false)]
         [DisplayName("密码")]
         public string Password
         {
@@ -142,6 +145,35 @@ namespace PCBQuotes.Models
             }
         }
 
-         
+        [Browsable(false)]
+        [DisplayName("禁用")]
+        public bool IsDisabled
+        {
+            get
+            {
+                return isDisabled;
+            }
+
+            set
+            {
+                isDisabled = value;
+                this.OnPropertyChanged(x=>x.IsDisabled);
+            }
+        }
+
+        [DisplayName("删除")]
+        public bool IsDeleted
+        {
+            get
+            {
+                return isDeleted;
+            }
+
+            set
+            {
+                isDeleted = value;
+                this.OnPropertyChanged(x=>x.IsDeleted);
+            }
+        }
     }
 }

@@ -103,6 +103,7 @@
     <Compile Include="Enums\EditFormMode.cs" />
     <Compile Include="Helpers\AppConfigHelper.cs" />
     <Compile Include="Helpers\ControlSearchHelper.cs" />
+    <Compile Include="Helpers\EncryptDecryptHelper.cs" />
     <Compile Include="Helpers\MDIFormHelper.cs" />
     <Compile Include="Helpers\ModelHelper.cs" />
     <Compile Include="Helpers\ValidationHelper.cs" />
