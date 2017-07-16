@@ -39,10 +39,25 @@ namespace PCBQuotes.UI
             this.deMain.ShowValidationPanel = true;
             this.deMain.EditorInitializing += (s, e) => {
                 e.Editor.Name = e.Property.Name;
-                if (e.Property.Name=="UserName")
+                if (e.Property.Name=="UserName"&&EditMode== Enums.EditFormMode.Edit)
                 {
                     e.Editor.Enabled = false;
                 }
+                else if(e.Property.Name=="Email")
+                {
+                    RadMaskedEditBox editor = new RadMaskedEditBox();
+                    editor.MaskType = MaskType.EMail;
+                    editor.MaskedEditBoxElement.StretchVertically = true;
+                    e.Editor = editor;
+                }
+                //else if (e.Property.Name == "Tel")
+                //{
+                //    RadMaskedEditBox editor = new RadMaskedEditBox();
+                //    editor.MaskType = MaskType.Regex;
+                //    editor.MaskedEditBoxElement.StretchVertically = true;
+                //    //editor.Mask = "9";
+                //    e.Editor = editor;
+                //}
             };
             this.deMain.ItemValidating += (s, e) => {
                 Models.AppUser user = this.deMain.CurrentObject as Models.AppUser;
@@ -73,7 +88,7 @@ namespace PCBQuotes.UI
                 {
                     case Enums.EditFormMode.Add:
                         this.Text = "新增";
-                        DataEntry = new Models.AppUser();
+                        DataEntry = new Models.AppUser() { Password=Helpers.EncryptDecryptHelper.GetStringMD5("888888")};//新增用户默认密码
                         break;
                     case Enums.EditFormMode.Edit:
                         this.Text = "编辑";

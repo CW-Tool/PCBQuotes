@@ -32,19 +32,21 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAdd = new Telerik.WinControls.UI.RadButton();
-            this.btnEdit = new Telerik.WinControls.UI.RadButton();
-            this.btnDelete = new Telerik.WinControls.UI.RadButton();
-            this.btnReLoad = new Telerik.WinControls.UI.RadButton();
             this.vgMainGrid = new Telerik.WinControls.UI.RadVirtualGrid();
+            this.btnReLoad = new Telerik.WinControls.UI.RadButton();
+            this.btnDelete = new Telerik.WinControls.UI.RadButton();
+            this.btnEdit = new Telerik.WinControls.UI.RadButton();
+            this.btnAdd = new Telerik.WinControls.UI.RadButton();
+            this.btnResetPassword = new Telerik.WinControls.UI.RadButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReLoad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vgMainGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReLoad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnResetPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +79,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnResetPassword);
             this.panel2.Controls.Add(this.btnReLoad);
             this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.btnEdit);
@@ -92,27 +95,27 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(10, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(205, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "用户管理";
+            this.label1.Text = "用户管理 （新用户初始密码 888888）";
             // 
-            // btnAdd
+            // vgMainGrid
             // 
-            this.btnAdd.Image = global::PCBQuotes.Properties.Resources.Plus_18px;
-            this.btnAdd.Location = new System.Drawing.Point(4, 7);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(110, 24);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "新增";
+            this.vgMainGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vgMainGrid.Location = new System.Drawing.Point(3, 83);
+            this.vgMainGrid.Name = "vgMainGrid";
+            this.vgMainGrid.Size = new System.Drawing.Size(686, 384);
+            this.vgMainGrid.TabIndex = 2;
+            this.vgMainGrid.Text = "radVirtualGrid1";
             // 
-            // btnEdit
+            // btnReLoad
             // 
-            this.btnEdit.Image = global::PCBQuotes.Properties.Resources.Edit_18px;
-            this.btnEdit.Location = new System.Drawing.Point(121, 7);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(110, 24);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "编辑";
+            this.btnReLoad.Image = global::PCBQuotes.Properties.Resources.Refresh_18px;
+            this.btnReLoad.Location = new System.Drawing.Point(471, 7);
+            this.btnReLoad.Name = "btnReLoad";
+            this.btnReLoad.Size = new System.Drawing.Size(110, 24);
+            this.btnReLoad.TabIndex = 3;
+            this.btnReLoad.Text = "重新加载";
             // 
             // btnDelete
             // 
@@ -123,23 +126,32 @@
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "删除";
             // 
-            // btnReLoad
+            // btnEdit
             // 
-            this.btnReLoad.Image = global::PCBQuotes.Properties.Resources.Refresh_18px;
-            this.btnReLoad.Location = new System.Drawing.Point(355, 7);
-            this.btnReLoad.Name = "btnReLoad";
-            this.btnReLoad.Size = new System.Drawing.Size(110, 24);
-            this.btnReLoad.TabIndex = 3;
-            this.btnReLoad.Text = "重新加载";
+            this.btnEdit.Image = global::PCBQuotes.Properties.Resources.Edit_18px;
+            this.btnEdit.Location = new System.Drawing.Point(121, 7);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(110, 24);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "编辑";
             // 
-            // vgMainGrid
+            // btnAdd
             // 
-            this.vgMainGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vgMainGrid.Location = new System.Drawing.Point(3, 83);
-            this.vgMainGrid.Name = "vgMainGrid";
-            this.vgMainGrid.Size = new System.Drawing.Size(686, 384);
-            this.vgMainGrid.TabIndex = 2;
-            this.vgMainGrid.Text = "radVirtualGrid1";
+            this.btnAdd.Image = global::PCBQuotes.Properties.Resources.Plus_18px;
+            this.btnAdd.Location = new System.Drawing.Point(4, 7);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(110, 24);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "新增";
+            // 
+            // btnResetPassword
+            // 
+            this.btnResetPassword.Image = global::PCBQuotes.Properties.Resources.Unlock_18px;
+            this.btnResetPassword.Location = new System.Drawing.Point(355, 7);
+            this.btnResetPassword.Name = "btnResetPassword";
+            this.btnResetPassword.Size = new System.Drawing.Size(110, 24);
+            this.btnResetPassword.TabIndex = 4;
+            this.btnResetPassword.Text = "重置密码";
             // 
             // AppUserForm
             // 
@@ -157,11 +169,12 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReLoad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vgMainGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReLoad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnResetPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -178,5 +191,6 @@
         private Telerik.WinControls.UI.RadButton btnEdit;
         private Telerik.WinControls.UI.RadButton btnAdd;
         private Telerik.WinControls.UI.RadVirtualGrid vgMainGrid;
+        private Telerik.WinControls.UI.RadButton btnResetPassword;
     }
 }

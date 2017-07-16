@@ -205,6 +205,9 @@
   <ItemGroup>
     <None Include="Resources\Cancel_18px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unlock_18px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

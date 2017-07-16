@@ -145,7 +145,7 @@ namespace PCBQuotes.Models
             }
         }
 
-        [Browsable(false)]
+        
         [DisplayName("禁用")]
         public bool IsDisabled
         {
@@ -161,6 +161,7 @@ namespace PCBQuotes.Models
             }
         }
 
+        [Browsable(false)]
         [DisplayName("删除")]
         public bool IsDeleted
         {

@@ -73,6 +73,37 @@ namespace PCBQuotes.UI
                     this.vgMainGrid.SelectCell(cell.RowIndex, cell.ColumnIndex);
                 }
             };
+
+            //重置密码
+            this.btnResetPassword.Click += (s,e)=>{
+                var cell = this.vgMainGrid.CurrentCell;
+                if (cell == null)
+                {
+                    RadMessageBox.Show(this, "请选择一行！", "", MessageBoxButtons.OK, RadMessageIcon.Error);
+                    return;
+                }
+                if (cell.RowIndex < 0)
+                {
+                    return;
+                }
+
+                var current = data.Data[cell.RowIndex];
+                var dr = RadMessageBox.Show(this, "密码将被重置为 888888，是否继续？", "", MessageBoxButtons.YesNo, RadMessageIcon.Question);
+                if (dr== DialogResult.Yes)
+                {
+                    int re = bll.Update<Models.AppUser>(current.Id, "Password", Helpers.EncryptDecryptHelper.GetStringMD5("888888"));
+                    if (re>0)
+                    {
+                        RadMessageBox.Show(this, "密码已重置为 888888，请及时更改！", "", MessageBoxButtons.OK, RadMessageIcon.Info);
+                    }
+                    else
+                    {
+                        RadMessageBox.Show(this, "重置失败！", "", MessageBoxButtons.OK, RadMessageIcon.Error);
+                    }
+                }
+                
+            };
+
             //按钮编辑
             this.btnEdit.Click += (s, e) => {
                 var cell = this.vgMainGrid.CurrentCell;
