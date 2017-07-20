@@ -71,6 +71,10 @@ namespace PCBQuotes.UI
             this.menuUsers.Click += (s, e) => {
                 Helpers.MDIFormHelper.OpenUniqueMDIChildWindow<UI.AppUserForm>(this, FormWindowState.Normal);
             };
+            //基础参数设置
+            this.menuBaseParaSetting.Click += (s, e) => {
+                Helpers.MDIFormHelper.OpenUniqueMDIChildWindow<UI.BaseParaSettingForm>(this, FormWindowState.Normal);
+            };
         }
 
         private void SetDatabaseConnectionString()

@@ -112,6 +112,7 @@
     <Compile Include="Localization\CNRadMessageLocalizationProvider.cs" />
     <Compile Include="Localization\CNRadVirtualGridLocalizationProvider.cs" />
     <Compile Include="Models\AppUser.cs" />
+    <Compile Include="Models\BasLayer.cs" />
     <Compile Include="Models\NotifyPropertyChangedBase.cs" />
     <Compile Include="Models\AppRole.cs" />
     <Compile Include="Program.cs" />
@@ -127,6 +128,12 @@
     </Compile>
     <Compile Include="UI\AppUserForm.Designer.cs">
       <DependentUpon>AppUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BaseParaSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BaseParaSettingForm.Designer.cs">
+      <DependentUpon>BaseParaSettingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\MainForm.cs">
       <SubType>Form</SubType>
@@ -162,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\AppUserForm.resx">
       <DependentUpon>AppUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BaseParaSettingForm.resx">
+      <DependentUpon>BaseParaSettingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

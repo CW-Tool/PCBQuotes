@@ -41,6 +41,8 @@
             this.menuCloseAllWindow = new Telerik.WinControls.UI.RadMenuItem();
             this.menuAbout = new Telerik.WinControls.UI.RadMenuItem();
             this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
+            this.radMenuSeparatorItem3 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
+            this.menuBaseParaSetting = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -81,6 +83,8 @@
             // menuSettings
             // 
             this.menuSettings.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.menuBaseParaSetting,
+            this.radMenuSeparatorItem3,
             this.menuUsers,
             this.menuUserRoles,
             this.radMenuSeparatorItem2,
@@ -135,6 +139,17 @@
             this.radStatusStrip1.TabIndex = 1;
             this.radStatusStrip1.Text = "radStatusStrip1";
             // 
+            // radMenuSeparatorItem3
+            // 
+            this.radMenuSeparatorItem3.Name = "radMenuSeparatorItem3";
+            this.radMenuSeparatorItem3.Text = "radMenuSeparatorItem3";
+            this.radMenuSeparatorItem3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // menuBaseParaSetting
+            // 
+            this.menuBaseParaSetting.Name = "menuBaseParaSetting";
+            this.menuBaseParaSetting.Text = "基础参数设置";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -171,5 +186,7 @@
         private Telerik.WinControls.UI.RadMenuItem menuUsers;
         private Telerik.WinControls.UI.RadMenuSeparatorItem radMenuSeparatorItem2;
         private Telerik.WinControls.UI.RadStatusStrip radStatusStrip1;
+        private Telerik.WinControls.UI.RadMenuItem menuBaseParaSetting;
+        private Telerik.WinControls.UI.RadMenuSeparatorItem radMenuSeparatorItem3;
     }
 }
