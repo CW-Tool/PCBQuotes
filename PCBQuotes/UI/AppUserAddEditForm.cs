@@ -1,4 +1,5 @@
 ﻿using PCBQuotes.Helpers;
+using PCBQuotes.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -120,7 +121,8 @@ namespace PCBQuotes.UI
                 }
 
                 this.btnOk.Enabled = false;
-                Task.Factory.StartNew(() => {
+                
+                Task.Factory.StartNew<AppUser>(() => {
                     Models.AppUser re = null;
                     if (EditMode == Enums.EditFormMode.Add)
                     {
@@ -131,20 +133,30 @@ namespace PCBQuotes.UI
                         re = bll.Update<Models.AppUser>(this.DataEntry);
                     }
 
+                    
+                    return re;
+                }).ContinueWith(tt=> {
+                    if (!tt.IsFaulted)
+                    {
+                        syncContext.Post((state) => {
+                            
+                            Models.AppUser sta = (Models.AppUser)state;
+                            if (sta != null)
+                            {
+                                this.DataEntry = sta;
+                                this.DialogResult = DialogResult.OK;
+                                //this.SubmitSucess = true;
+                            }
+                            else
+                            {
+                                RadMessageBox.Show(this, "保存失败!", "", MessageBoxButtons.OK, RadMessageIcon.Error);
+                            }
+                        }, tt.Result);
+                    }
                     syncContext.Post((state) => {
                         this.btnOk.Enabled = true;
-                        Models.AppUser sta = (Models.AppUser)state;
-                        if (sta != null)
-                        {
-                            this.DataEntry = sta;
-                            this.DialogResult = DialogResult.OK;
-                            //this.SubmitSucess = true;
-                        }
-                        else
-                        {
-                            RadMessageBox.Show(this, "保存失败!", "", MessageBoxButtons.OK, RadMessageIcon.Error);
-                        }
-                    }, re);
+                         
+                    }, tt.Result); 
                 });
             };
         }

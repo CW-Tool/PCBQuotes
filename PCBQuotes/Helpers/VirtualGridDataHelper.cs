@@ -120,6 +120,8 @@ namespace PCBQuotes.Helpers
                     
                     
                 }
+                
+            }).ContinueWith(t=> {
                 syncContext.Post((state) => {
                     //dynamic d = state;
                     //var grid = da.Grid as RadVirtualGrid;
@@ -127,7 +129,11 @@ namespace PCBQuotes.Helpers
                     {
                         return;
                     }
-                    grid.RowCount = Math.Min(d.LoadedCount + 1, d.Data.Count);
+                    if (!t.IsFaulted)
+                    {
+                        grid.RowCount = Math.Min(d.LoadedCount + 1, d.Data.Count);
+                    }
+                    
                     if (grid.MasterViewInfo.IsWaiting)
                     {
                         grid.MasterViewInfo.IsWaiting = false;
@@ -152,7 +158,9 @@ namespace PCBQuotes.Helpers
                         d.LoadedCount = endIndex;
                     }
                 }
-                syncContext.Post((state)=> {
+                
+            }).ContinueWith(t=> {
+                syncContext.Post((state) => {
                     //dynamic da = state;
                     //var grid = da.Grid as RadVirtualGrid;
                     var grid = d.Grid;
@@ -163,7 +171,7 @@ namespace PCBQuotes.Helpers
                     int waitingRow = grid.RowCount - 1;
                     grid.RowCount = Math.Min(d.LoadedCount + 1, d.Data.Count);
                     grid.MasterViewInfo.StopRowWaiting(waitingRow);
-                },d);
+                }, d);
             });
         }
     }

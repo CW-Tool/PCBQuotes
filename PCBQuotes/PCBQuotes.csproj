@@ -109,6 +109,7 @@
     <Compile Include="Helpers\ValidationHelper.cs" />
     <Compile Include="Helpers\VirtualGridEditCommandCellElement.cs" />
     <Compile Include="Helpers\VirtualGridDataHelper.cs" />
+    <Compile Include="Localization\CNRadGridLocalizationProvider.cs" />
     <Compile Include="Localization\CNRadMessageLocalizationProvider.cs" />
     <Compile Include="Localization\CNRadVirtualGridLocalizationProvider.cs" />
     <Compile Include="Models\AppUser.cs" />

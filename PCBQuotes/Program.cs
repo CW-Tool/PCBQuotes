@@ -40,6 +40,7 @@ namespace PCBQuotes
         {
             RadMessageLocalizationProvider.CurrentProvider = new Localization.CNRadMessageLocalizationProvider();
             RadVirtualGridLocalizationProvider.CurrentProvider = new Localization.CNRadVirtualGridLocalizationProvider();
+            RadGridLocalizationProvider.CurrentProvider = new Localization.CNRadGridLocalizationProvider();
         }
 
         /// <summary>
