@@ -9,7 +9,7 @@ using System.Text;
 namespace PCBQuotes.Models
 {
     [Table("AppUser")]
-    public class AppUser:NotifyPropertyChangedBase  
+    public class AppUser:BaseModel//NotifyPropertyChangedBase  
     {
         private int id;
         private string userName;

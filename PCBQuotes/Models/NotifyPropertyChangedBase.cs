@@ -19,18 +19,18 @@ namespace PCBQuotes.Models
         }
     }
     //扩展方法
-    public static class NotifyPropertyChangedBaseEx
-    {
-        public static void OnPropertyChanged<T, TProperty>(this T notifyPropertyChangedBase, Expression<Func<T, TProperty>> propertyName)
-            where T : NotifyPropertyChangedBase
-        {
-            var memberExpression = propertyName.Body as MemberExpression;
-            if (null != memberExpression)
-            {
-                notifyPropertyChangedBase.OnPropertyChanged(memberExpression.Member.Name);
-            }
-            else
-                throw new NotImplementedException();
-        }
-    }
+    //public static class NotifyPropertyChangedBaseEx
+    //{
+    //    public static void OnPropertyChanged<T, TProperty>(this T notifyPropertyChangedBase, Expression<Func<T, TProperty>> propertyName)
+    //        where T : NotifyPropertyChangedBase
+    //    {
+    //        var memberExpression = propertyName.Body as MemberExpression;
+    //        if (null != memberExpression)
+    //        {
+    //            notifyPropertyChangedBase.OnPropertyChanged(memberExpression.Member.Name);
+    //        }
+    //        else
+    //            throw new NotImplementedException();
+    //    }
+    //}
 }

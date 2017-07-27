@@ -8,8 +8,9 @@ using System.Text;
 
 namespace PCBQuotes.Models
 {
+    
     [Table("BasLayer")]
-    public class BasLayer:NotifyPropertyChangedBase
+    public class BasLayer:BaseModel//NotifyPropertyChangedBase
     {
         private int id;
         private string layerName;
@@ -27,7 +28,7 @@ namespace PCBQuotes.Models
 
             set
             {
-                id = value;
+                id = value; 
                 this.OnPropertyChanged(x => x.Id);
             }
         }

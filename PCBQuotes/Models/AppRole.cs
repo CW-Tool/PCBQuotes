@@ -9,7 +9,7 @@ using System.ComponentModel;
 namespace PCBQuotes.Models
 {
     [Table("AppRole")]   
-    public partial class AppRole:NotifyPropertyChangedBase,IEditableObject
+    public partial class AppRole:BaseModel//NotifyPropertyChangedBase,IEditableObject
     {
         
 

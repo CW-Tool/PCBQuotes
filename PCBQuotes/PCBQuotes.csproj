@@ -67,6 +67,10 @@
       <HintPath>..\packages\DataConnectionDialog.1.2\lib\Microsoft.Data.ConnectionUI.Dialog.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
@@ -88,6 +92,7 @@
       <HintPath>..\lib\RCWF\2017.2.502.40\Telerik.WinControls.GridView.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Telerik.WinControls.RadDock, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.UI, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <HintPath>..\lib\RCWF\2017.2.502.40\Telerik.WinControls.UI.dll</HintPath>
       <Private>True</Private>
@@ -103,9 +108,11 @@
     <Compile Include="Enums\EditFormMode.cs" />
     <Compile Include="Helpers\AppConfigHelper.cs" />
     <Compile Include="Helpers\ControlSearchHelper.cs" />
+    <Compile Include="Helpers\DataEntryHelper.cs" />
     <Compile Include="Helpers\EncryptDecryptHelper.cs" />
     <Compile Include="Helpers\MDIFormHelper.cs" />
     <Compile Include="Helpers\ModelHelper.cs" />
+    <Compile Include="Helpers\ObjectHelper.cs" />
     <Compile Include="Helpers\ValidationHelper.cs" />
     <Compile Include="Helpers\VirtualGridEditCommandCellElement.cs" />
     <Compile Include="Helpers\VirtualGridDataHelper.cs" />
@@ -113,6 +120,7 @@
     <Compile Include="Localization\CNRadMessageLocalizationProvider.cs" />
     <Compile Include="Localization\CNRadVirtualGridLocalizationProvider.cs" />
     <Compile Include="Models\AppUser.cs" />
+    <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\BasLayer.cs" />
     <Compile Include="Models\NotifyPropertyChangedBase.cs" />
     <Compile Include="Models\AppRole.cs" />
@@ -218,6 +226,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Unlock_18px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_18px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
