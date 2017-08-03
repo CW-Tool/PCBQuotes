@@ -13,10 +13,10 @@ namespace PCBQuotes.Models
     {
         
 
-        [Browsable(false)]
-        [Key]
-        [Display(AutoGenerateField = false,Name ="")]
-        public int  Id { get; set; }
+        //[Browsable(false)]
+        //[Key]
+        //[Display(AutoGenerateField = false,Name ="")]
+        //public new  int  Id { get; set; }
  
         
 

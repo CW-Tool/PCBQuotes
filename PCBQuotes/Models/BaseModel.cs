@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -8,7 +9,7 @@ using System.Text;
 namespace PCBQuotes.Models
 {
      
-    public class BaseModel : INotifyPropertyChanged//, IEditableObject
+    public partial class BaseModel : INotifyPropertyChanged//, IEditableObject
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(string propertyName)
@@ -18,8 +19,24 @@ namespace PCBQuotes.Models
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-        
 
+        private int id;
+
+        [Browsable(false)]
+        [Key]
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+                this.OnPropertyChanged(x => x.Id);
+            }
+        }
 
         //private bool inTxn = false;
         //private object backup;//用这个字段来保存一个备份数据
@@ -30,7 +47,7 @@ namespace PCBQuotes.Models
         //        backup = this.MemberwiseClone();
         //        inTxn = true;
         //    }
-            
+
         //}
 
         //public void CancelEdit()
@@ -48,7 +65,7 @@ namespace PCBQuotes.Models
         //        backup = null;
         //        inTxn = false;
         //    }
-            
+
         //}
     }
 

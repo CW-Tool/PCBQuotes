@@ -9,29 +9,29 @@ using System.Text;
 namespace PCBQuotes.Models
 {
     
-    [Table("BasLayer")]
-    public class BasLayer:BaseModel//NotifyPropertyChangedBase
+    [Table("QuoLayer")]
+    public class QuoLayer:BaseModel//NotifyPropertyChangedBase
     {
-        private int id;
+        //private int id;
         private string layerName;
         private int layerValue;
         private string remark;
 
-        [Browsable(false)]
-        [Key]
-        public int Id
-        {
-            get
-            {
-                return id;
-            }
+        //[Browsable(false)]
+        //[Key]
+        //public new int Id
+        //{
+        //    get
+        //    {
+        //        return id;
+        //    }
 
-            set
-            {
-                id = value; 
-                this.OnPropertyChanged(x => x.Id);
-            }
-        }
+        //    set
+        //    {
+        //        id = value; 
+        //        this.OnPropertyChanged(x => x.Id);
+        //    }
+        //}
 
         [DisplayName("名称")]
         public string LayerName

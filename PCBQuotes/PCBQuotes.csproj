@@ -43,6 +43,14 @@
     <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.1.50.2\lib\net40\Dapper.dll</HintPath>
       <Private>True</Private>
@@ -107,6 +115,7 @@
     <Compile Include="DAL\GeneralDal.cs" />
     <Compile Include="Enums\EditFormMode.cs" />
     <Compile Include="Helpers\AppConfigHelper.cs" />
+    <Compile Include="Helpers\ComboboxItemModel.cs" />
     <Compile Include="Helpers\ControlSearchHelper.cs" />
     <Compile Include="Helpers\DataEntryHelper.cs" />
     <Compile Include="Helpers\EncryptDecryptHelper.cs" />
@@ -121,9 +130,11 @@
     <Compile Include="Localization\CNRadVirtualGridLocalizationProvider.cs" />
     <Compile Include="Models\AppUser.cs" />
     <Compile Include="Models\BaseModel.cs" />
-    <Compile Include="Models\BasLayer.cs" />
+    <Compile Include="Models\QuoLayer.cs" />
+    <Compile Include="Models\QuoMaterial.cs" />
     <Compile Include="Models\NotifyPropertyChangedBase.cs" />
     <Compile Include="Models\AppRole.cs" />
+    <Compile Include="Models\QuoMaterialCost.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\AppUserAddEditForm.cs">

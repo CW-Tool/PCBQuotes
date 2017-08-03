@@ -85,10 +85,10 @@ namespace PCBQuotes.Localization
                 case RadGridStringId.FilterLogicalOperatorAnd: return "AND";
                 case RadGridStringId.FilterLogicalOperatorOr: return "OR";
                 case RadGridStringId.FilterCompositeNotOperator: return "NOT";
-                case RadGridStringId.DeleteRowMenuItem: return "Delete Row";
-                case RadGridStringId.SortAscendingMenuItem: return "Sort Ascending";
-                case RadGridStringId.SortDescendingMenuItem: return "Sort Descending";
-                case RadGridStringId.ClearSortingMenuItem: return "Clear Sorting";
+                case RadGridStringId.DeleteRowMenuItem: return "删除行";// "Delete Row";
+                case RadGridStringId.SortAscendingMenuItem: return "升序";// "Sort Ascending";
+                case RadGridStringId.SortDescendingMenuItem: return "降序";// "Sort Descending";
+                case RadGridStringId.ClearSortingMenuItem: return "取消排序";// "Clear Sorting";
                 case RadGridStringId.ConditionalFormattingMenuItem: return "Conditional Formatting";
                 case RadGridStringId.GroupByThisColumnMenuItem: return "Group by this column";
                 case RadGridStringId.UngroupThisColumn: return "Ungroup this column";

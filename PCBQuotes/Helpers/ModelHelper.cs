@@ -65,6 +65,13 @@ namespace PCBQuotes.Helpers
                                 p.SetValue(t, Convert.ChangeType(value, fType, System.Globalization.CultureInfo.CurrentCulture), null);
                             }
                         }
+                        else
+                        {
+                            if (fType.Name.Equals("String"))
+                            {
+                                p.SetValue(t, null, null);
+                            }
+                        }
                     }
                 }
 

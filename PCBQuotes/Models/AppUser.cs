@@ -11,7 +11,7 @@ namespace PCBQuotes.Models
     [Table("AppUser")]
     public class AppUser:BaseModel//NotifyPropertyChangedBase  
     {
-        private int id;
+        //private int id;
         private string userName;
         private string password;
         private string realName;
@@ -22,22 +22,22 @@ namespace PCBQuotes.Models
         private bool isDisabled;
         private bool isDeleted;
 
-        [Browsable(false)]
-        [Key]
-        //[Display(AutoGenerateField = false, Name = "")]
-        public int Id
-        {
-            get
-            {
-                return id;
-            }
+        //[Browsable(false)]
+        //[Key]
+         
+        //public int Id
+        //{
+        //    get
+        //    {
+        //        return id;
+        //    }
 
-            set
-            {
-                id = value;
-                this.OnPropertyChanged(x => x.Id);
-            }
-        }
+        //    set
+        //    {
+        //        id = value;
+        //        this.OnPropertyChanged(x => x.Id);
+        //    }
+        //}
 
         [DisplayName("用户名")]
         public string UserName

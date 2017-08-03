@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using log4net;
 using PCBQuotes.Helpers;
+using PCBQuotes.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -103,6 +104,22 @@ namespace PCBQuotes.BLL
                 return re;
             }
             return null;
+        }
+
+        public List<PCBQuotes.Models.QuoMaterialCostViewModel> SelectQuoMaterialCostViewModel(int materialId)
+        {
+            //conn.Open();
+            //string tableName = ModelHelper.GetTableNameByModel<T>();
+            //if (!string.IsNullOrWhiteSpace(tableName))
+            //{
+                string sql = @"select a.*,b.LayerName,c.MaterialName from QuoMaterialCost a
+left join QuoLayer b on a.LayerId = b.Id 
+left join QuoMaterial c on a.MaterialId = c.Id where a.MaterialId = @MaterialId";
+
+                var re = conn.Query<QuoMaterialCostViewModel>(sql,new { MaterialId = materialId}).ToList();
+                return re;
+            //}
+            //return null;
         }
 
         public List<T> Select<T>(string where)

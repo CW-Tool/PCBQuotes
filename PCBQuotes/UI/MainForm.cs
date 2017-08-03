@@ -65,15 +65,15 @@ namespace PCBQuotes.UI
 
             //用户角色 管理
             this.menuUserRoles.Click += (s, e) => {
-                Helpers.MDIFormHelper.OpenUniqueMDIChildWindow<UI.UserRolesForm>(this,FormWindowState.Normal);
+                Helpers.MDIFormHelper.OpenUniqueMDIChildWindow<UI.UserRolesForm>(this,FormWindowState.Maximized);
             };
             //用户管理菜单事件
             this.menuUsers.Click += (s, e) => {
-                Helpers.MDIFormHelper.OpenUniqueMDIChildWindow<UI.AppUserForm>(this, FormWindowState.Normal);
+                Helpers.MDIFormHelper.OpenUniqueMDIChildWindow<UI.AppUserForm>(this, FormWindowState.Maximized);
             };
             //基础参数设置
             this.menuBaseParaSetting.Click += (s, e) => {
-                Helpers.MDIFormHelper.OpenUniqueMDIChildWindow<UI.BaseParaSettingForm>(this, FormWindowState.Normal);
+                Helpers.MDIFormHelper.OpenUniqueMDIChildWindow<UI.BaseParaSettingForm>(this, FormWindowState.Maximized);
             };
         }
 
